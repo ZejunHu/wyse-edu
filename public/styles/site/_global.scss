@@ -1,0 +1,117 @@
+// Global styling for this template
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: overpass-regular;
+}
+
+// hr {
+//   max-width: 50px;
+//   border-width: 3px;
+//   border-color: $primary;
+// }
+//
+hr.light {
+  border-color: $white;
+}
+
+a {
+  color: $primary;
+  @include transition-all;
+  &:hover {
+    color: darken($primary, .1);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: PlayfairDisplay-Bold;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-dark {
+  background-color: $black !important;
+}
+
+.bg-gray {
+  background-color: $gray-200 !important;
+}
+
+.text-faded {
+  color: fade-out($white, .3);
+}
+
+.text-red {
+  color: $red;
+}
+
+.text-gold {
+  color: $gold;
+}
+
+.main-content {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+section {
+  padding: 8rem 0;
+}
+
+.section-heading {
+  margin-top: 0;
+  font-family: PlayfairDisplay-Bold;
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  &.section-heading--bigger {
+    font-size: 30px;
+    line-height: 69px;
+    margin-bottom: 3.2rem;
+    @media (min-width: 768px) {
+      font-size: 58px;
+    }
+    @media (min-width: 1200px) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+::-moz-selection {
+  color: $white;
+  background: $gray-900;
+  text-shadow: none;
+}
+
+::selection {
+  color: $white;
+  background: $gray-900;
+  text-shadow: none;
+}
+
+img::selection {
+  color: $white;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: $white;
+  background: transparent;
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1360px;
+  }
+}
