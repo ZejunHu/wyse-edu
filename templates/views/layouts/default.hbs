@@ -16,7 +16,8 @@
 		<link type="text/css" rel="stylesheet" href="/styles/plugin/magnific-popup.css" />
 
 		<!-- Font Awesome Icon -->
-		<!-- <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<!-- <link type="text/css" rel="stylesheet" href="/styles/plugin/font-awesome.min.css" /> -->
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="/styles/site.css" />
@@ -34,37 +35,74 @@
 
 	</head>
 	<body>
-		<div id="header">
-			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">wyse</a>
+
+		<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container-fluid bg-dark navbar-top-large-screen">
+        <div class="navbar-top-large-screen-info">
+          <p class="navbar-top-large-screen-info-detail">联系我们：<span class="navbar-top-large-screen-info-detail-content">(+1) 289-809-2649</span></p>
+          <p class="navbar-top-large-screen-info-detail">工作时间：<span class="navbar-top-large-screen-info-detail-content">周一至周五 10 am-8 pm</span></p>
+        </div>
+        <div class="navbar-top-large-screen-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="container container--large">
+        <a class="navbar-brand js-scroll-trigger" href="/">
+          <img src="/images/home/wyse-logo.png" class="navbar-brand-logo" alt="wyse logo">
+        </a>
+				<a class="navbar-brand-shrink js-scroll-trigger" href="/">
+          <img src="/images/home/wyse-logo-white.png" class="navbar-brand-logo" alt="wyse logo">
+        </a>
+        <button class="btn ml-auto navbar-info-btn" type="button" data-toggle="modal" data-target="#navbarInfo" aria-controls="navbarInfo" aria-expanded="false" aria-label="Toggle navbarInfo">
+          <i class="fa fa-info-circle"></i>
+        </button>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+						{{# each navLinks}}
+						<li {{#ifeq ../section key}}class="nav-item active"{{else}}class="nav-item"{{/ifeq}}>
+							<a class="nav-link js-scroll-trigger" href="{{ href }}">{{ label }}</a>
+						</li>
+						{{/each}}
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger nav-link-button" href="#appointment">在线付款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+		<!-- Info Modal -->
+		<div class="modal fade" id="navbarInfo" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="navbar-top-large-screen-info">
+							<p class="navbar-top-large-screen-info-detail">联系我们：<span class="navbar-top-large-screen-info-detail-content">(+1) 289-809-2649</span></p>
+		          <p class="navbar-top-large-screen-info-detail">工作时间：<span class="navbar-top-large-screen-info-detail-content">周一至周五 10 am-8 pm</span></p>
 						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
+						<div class="navbar-top-large-screen-social">
+							<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
+
 		<div id="body">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form

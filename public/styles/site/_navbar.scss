@@ -1,0 +1,208 @@
+// Styling for the navbar
+#mainNav {
+  border-bottom: 1px solid fade-out($gray-900, .9);
+  background-color: $white;
+  @include transition-all;
+  .navbar-top-large-screen {
+    display: none;
+  }
+  .navbar-brand, .navbar-brand-shrink {
+    .navbar-brand-logo {
+      width: auto;
+      max-width: 10rem;
+    }
+  }
+  .navbar-brand-shrink {
+    display: none;
+  }
+  .navbar-info-btn {
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0;
+    margin-right: 1.2rem;
+    box-shadow: none;
+  }
+  .navbar-nav {
+    > li.nav-item {
+      > a.nav-link,
+      > a.nav-link:focus {
+        font-size: 1rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: $black;
+        box-sizing: border-box;
+        &:hover {
+          color: $red;
+        }
+        &.active {
+          color: $red !important;
+          background-color: transparent;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    > li.nav-item.active {
+      > a.nav-link,
+      > a.nav-link:focus {
+        color: $red;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    border-color: transparent;
+    flex-wrap: wrap;
+    padding: 0;
+    .navbar-info-btn {
+      display: none;
+    }
+    .navbar-top-large-screen {
+      display: flex;
+      color: $white;
+      height: 48px;
+      .navbar-top-large-screen-info {
+        .navbar-top-large-screen-info-detail {
+          display: inline-block;
+          margin: 0 1rem;
+          font-size: 14px;
+          letter-spacing: 1px;
+          .navbar-top-large-screen-info-detail-content {
+            opacity: 0.75;
+          }
+        }
+      }
+      .navbar-top-large-screen-social {
+        font-size: 16px;
+        a {
+          padding: 0 8px;
+          color: $white;
+          opacity: 0.75;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .navbar-brand, .navbar-brand-shrink {
+      max-width: 15rem;
+      padding: 1rem 0;
+    }
+    .navbar-nav {
+      > li.nav-item {
+        padding: 0 1rem;
+        > a.nav-link,
+        > a.nav-link:focus {
+          padding: 0.5rem 0rem;
+        }
+        > a.nav-link.nav-link-button,
+        > a.nav-link.nav-link-button:focus {
+          font-size: 14px;
+          font-weight: bold;
+          color: $white;
+          letter-spacing: 2px;
+          background-color: $red;
+          border: 0;
+          padding: 0.5rem;
+          border-radius: 300px;
+          &:hover, &:focus, &:active {
+            color: $white;
+            background-color: $yellow;
+          }
+        }
+      }
+    }
+
+    &.navbar-shrink {
+      .navbar-top-large-screen {
+        display: none;
+      }
+      border-bottom: 1px solid fade-out($gray-900, .9);
+      background-color: fade-out($black, .2);
+      .navbar-brand {
+        display: none;
+      }
+      .navbar-brand-shrink {
+        display: inline-block;
+      }
+      .navbar-nav {
+        > li.nav-item {
+          > a.nav-link,
+          > a.nav-link:focus {
+            color: $white;
+            &:hover {
+              color: $yellow;
+            }
+          }
+          > a.nav-link.nav-link-button,
+          > a.nav-link.nav-link-button:focus {
+            color: $white;
+          }
+        }
+        > li.nav-item.active {
+          > a.nav-link,
+          > a.nav-link:focus {
+            color: $yellow;
+          }
+        }
+      }
+    }
+
+  }
+  @media (min-width: 1200px) {
+    .navbar-top-large-screen {
+      padding: 0 3rem;
+      .navbar-top-large-screen-social {
+        a {
+          padding: 0 1rem;
+        }
+      }
+    }
+    .navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus {
+      letter-spacing: 2px;
+    }
+    .nav-link-button {
+      padding: 0.5rem 1rem !important;
+    }
+  }
+}
+
+#navbarInfo {
+  .modal-header {
+    padding: 0;
+    border: none;
+    .close {
+      margin: 0 0 0 auto;
+      padding: 1rem 1rem 0 1rem;
+    }
+  }
+  .modal-body {
+    border: none;
+    padding-top: 0.5rem;
+  }
+  .navbar-top-large-screen-info {
+    .navbar-top-large-screen-info-detail {
+      display: inline-block;
+      margin: 0 1rem;
+      font-size: 16px;
+      letter-spacing: 1px;
+      line-height: 2rem;
+      .navbar-top-large-screen-info-detail-content {
+        opacity: 0.75;
+      }
+    }
+  }
+  .navbar-top-large-screen-social {
+    font-size: 20px;
+    padding: 1rem 0.5rem;
+    a {
+      padding: 0 8px;
+      color: $red;
+      opacity: 0.75;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

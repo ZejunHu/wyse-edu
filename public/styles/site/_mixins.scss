@@ -10,16 +10,34 @@
   -o-background-size: cover;
   background-size: cover;
 }
-// @mixin serif-font() {
-//   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
-// }
-// @mixin sans-serif-font() {
-//   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-// }
 
-///////////////////   Overpass   ////////////////////////
+@mixin text-level-1() {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-// @font-face {
-//   font-family: "overpass-bold";
-//   src:url("/fonts/Overpass/overpass-bold.otf");
-// }
+@mixin text-level-2() {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@mixin text-level-3() {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+@mixin text-level-4() {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@mixin text-level-5() {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
