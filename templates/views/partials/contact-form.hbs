@@ -1,0 +1,32 @@
+<div class="container section-padding contact-form">
+	<h3 class="text-center contact-form-heading">联系我们</h3>
+	<div class="row">
+		<div class="col-10 mx-auto">
+			{{#if enquirySubmitted}}
+			<h3>Thanks for getting in touch.</h3>
+			{{else}}
+			<form method="post">
+				<div class="row">
+					<input type="hidden" name="action" value="contact">
+					<div class="form-group contact-form-input col-md-4">
+						<input type="text" name="name" placeholder="姓名" class="form-control" value="{{formData.name}}">
+					</div>
+					<div class="form-group contact-form-input {{#if validationErrors.email}}has-error{{/if}} col-md-4">
+						<input type="email" name="email" placeholder="电子邮件" class="form-control" value="{{formData.email}}">
+					</div>
+					<div class="form-group contact-form-input col-md-4">
+						<input type="text" name="phone" placeholder="电话" class="form-control" value="{{formData.phone}}">
+					</div>
+
+					<div class="form-group contact-form-input {{#if validationErrors.message}}has-error{{/if}} col-md-12">
+						<textarea name="message" placeholder="填写信息" rows="10" class="form-control">{{formData.message}}</textarea>
+					</div>
+					<div class="form-actions col-md-12">
+						<button type="submit" class="btn contact-form-submit-btn">发送信息</button>
+					</div>
+				</div>
+			</form>
+			{{/if}}
+		</div>
+	</div>
+</div>

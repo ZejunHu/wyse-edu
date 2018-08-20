@@ -1,0 +1,38 @@
+.contact-form {
+  padding: 4rem 0 2rem;
+  .contact-form-heading {
+    @include text-level-1;
+    margin-bottom: 2rem;
+  }
+  .contact-form-input {
+    input, textarea {
+      padding: 10px;
+      background-color: #F7F7F7;
+      border: 1px solid #CED1D2;
+      font-size: 14px;
+      color: $black;
+      &:focus {
+        box-shadow: 0 0 2px 1px opacify(#9B9B9B, 0.5);
+      }
+    }
+  }
+  .contact-form-submit-btn {
+    @include text-level-5;
+    color: $white;
+    width: 100%;
+    padding: 10px 0;
+    background-color: $yellow;
+    &:hover {
+      background-color: $red;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .contact-form-input {
+      margin: 1rem 0;
+    }
+    .contact-form-submit-btn {
+      margin: 1rem 0 0;
+    }
+  }
+}

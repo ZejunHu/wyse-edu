@@ -90,9 +90,11 @@
     }
     .navbar-nav {
       > li.nav-item {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
         > a.nav-link,
         > a.nav-link:focus {
+          font-size: 14px;
+          letter-spacing: 0;
           padding: 0.5rem 0rem;
         }
         > a.nav-link.nav-link-button,
@@ -158,13 +160,25 @@
         }
       }
     }
+    .navbar-nav > li.nav-item {
+      padding: 0 1rem;
+    }
     .navbar-nav > li.nav-item > a.nav-link,
     .navbar-nav > li.nav-item > a.nav-link:focus {
-      letter-spacing: 2px;
+      font-size: 1rem;
+      letter-spacing: 1px;
     }
     .nav-link-button {
       padding: 0.5rem 1rem !important;
     }
+  }
+  @media (min-width: 1500px) {
+
+    .navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus {
+      letter-spacing: 2px;
+    }
+
   }
 }
 

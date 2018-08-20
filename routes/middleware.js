@@ -21,6 +21,11 @@ exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: '首页', key: 'home', href: '/' },
 		{ label: '最新资讯', key: 'blog', href: '/blog' },
+		{ label: '移民项目', key: 'project', href: '/project' },
+		{ label: 'P.A.S.S', key: 'pass', href: '/pass' },
+		{ label: '学校介绍', key: 'education', href: '/education' },
+		{ label: '夏|冬令营', key: 'camp', href: '/camp' },
+		{ label: '签证服务', key: 'visa', href: '/visa' },
 		{ label: '联系我们', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;

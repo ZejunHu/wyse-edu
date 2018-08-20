@@ -1,5 +1,6 @@
 // Bootstrap
 // =========
+@import "site/variables";
 @import "bootstrap/bootstrap";
 // Bootstrap can be removed entirely by deleting this line.
 
@@ -15,7 +16,11 @@
 // ===========
 
 // Add your own site style includes here
-@import "site/variables";
+
 @import "site/mixins";
 @import "site/global";
 @import "site/navbar";
+@import "site/home";
+@import "site/contact-form";
+@import "site/social-link";
+@import "site/footer";

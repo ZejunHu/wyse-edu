@@ -1,84 +1,218 @@
 {{!< default}}
-<div class="container">
-	<div class="jumbotron"><img src="/images/logo.svg" width="160">
-		<h1>微软雅黑</h1>
-		<p>This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.</p>
-		<p>
-			It includes the latest versions of
-			<a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		</p>
-		<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
-		<hr>
-		<p>We have created a default Admin user for you with the email <strong>admin@admin.com</strong> and the password <strong>admin</strong>.</p>
-		<p><a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a> to use the Admin UI.</p>
-		<hr>
-		<p>
-			Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
-		</p>
+<div class="homepage">
+	<div class="masthead text-white">
+	  <div id="carouselMastheadIndicators" class="carousel vert slide" data-ride="carousel">
+	    <ol class="carousel-indicators carousel-indicators--round">
+	      <li data-target="#carouselMastheadIndicators" data-slide-to="0" class="active"></li>
+	      <li data-target="#carouselMastheadIndicators" data-slide-to="1"></li>
+	      <li data-target="#carouselMastheadIndicators" data-slide-to="2"></li>
+	    </ol>
+			<div class="carousel-inner">
+		    <div class="carousel-item active" style="background-image: url('/images/home/1.jpg')">
+		      <!-- <img class="d-block w-100" src="/images/home/1.jpg" alt="First slide"> -->
+		    </div>
+		    <div class="carousel-item" style="background-image: url('/images/home/2.jpg')">
+		      <!-- <img class="d-block w-100" src="/images/home/2.jpg" alt="Second slide"> -->
+		    </div>
+		    <div class="carousel-item" style="background-image: url('/images/home/3.jpg')">
+		      <!-- <img class="d-block w-100" src="/images/home/3.jpg" alt="Third slide"> -->
+		    </div>
+		  </div>
+		  <a class="carousel-control-prev" href="#carouselMastheadIndicators" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselMastheadIndicators" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+	  </div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="jumbotron"><img src="/images/logo.svg" width="160">
-		<h1>微软雅黑</h1>
-		<p>This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.</p>
-		<p>
-			It includes the latest versions of
-			<a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		</p>
-		<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
-		<hr>
-		<p>We have created a default Admin user for you with the email <strong>admin@admin.com</strong> and the password <strong>admin</strong>.</p>
-		<p><a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a> to use the Admin UI.</p>
-		<hr>
-		<p>
-			Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
-		</p>
-	</div>
-</div>
+	<div class="homepage-news section-padding">
+		<div class="container container--large">
+			<div class="homepage-news-heading">
+				<div>
+					<span class="homepage-news-heading-name">最新资讯 | </span><a href="/blog" class="homepage-news-heading-link">阅读所有内容</a>
+				</div>
+			</div>
+			<div class="row content-padding">
+				<div class="homepage-news-content col-lg-9">
+					<div id="carouselHomepageNews" class="carousel slide" data-ride="carousel">
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <div class="row">
+									{{# each data.posts1}}
+									<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="col-md-4 homepage-news-content-block">
+										<h2 class="homepage-news-content-block-heading">{{{title}}}</h2>
+										<p class="homepage-news-content-block-content">
+												{{#if publishedDate}}{{date publishedDate}}{{/if}}
+												{{#if author.name.first}}by {{author.name.first}}{{/if}}
+										</p>
+										<div class="homepage-news-content-block-content">{{{content.brief}}}</div>
+										{{#if content.extended}}
+										<a href="{{postUrl slug}}" class="homepage-news-content-block-link">
+											<span>阅读全文</span>
+											<img class="homepage-news-content-block-link-arrow" src="/icon/arrows_right_double-red.svg" alt="">
+										</a>
+										{{/if}}
+									</div>
+									{{/each}}
+					      </div>
+					    </div>
+					    <div class="carousel-item">
+								<div class="row">
+									{{# each data.posts2}}
+									<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="col-md-4 homepage-news-content-block">
+										<h2 class="homepage-news-content-block-heading">{{{title}}}</h2>
+										<p class="homepage-news-content-block-content">
+												{{#if publishedDate}}{{date publishedDate}}{{/if}}
+												{{#if author.name.first}}by {{author.name.first}}{{/if}}
+										</p>
+										<div class="homepage-news-content-block-content">{{{content.brief}}}</div>
+										{{#if content.extended}}
+										<a href="{{postUrl slug}}" class="homepage-news-content-block-link">
+											<span>阅读全文</span>
+											<img class="homepage-news-content-block-link-arrow" src="/icon/arrows_right_double-red.svg" alt="">
+										</a>
+										{{/if}}
+									</div>
+									{{/each}}
+					      </div>
+					    </div>
+					    <div class="carousel-item">
+								<div class="row">
+									{{# each data.posts3}}
+									<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="col-md-4 homepage-news-content-block">
+										<h2 class="homepage-news-content-block-heading">{{{title}}}</h2>
+										<p class="homepage-news-content-block-content">
+												{{#if publishedDate}}{{date publishedDate}}{{/if}}
+												{{#if author.name.first}}by {{author.name.first}}{{/if}}
+										</p>
+										<div class="homepage-news-content-block-content">{{{content.brief}}}</div>
+										{{#if content.extended}}
+										<a href="{{postUrl slug}}" class="homepage-news-content-block-link">
+											<span>阅读全文</span>
+											<img class="homepage-news-content-block-link-arrow" src="/icon/arrows_right_double-red.svg" alt="">
+										</a>
+										{{/if}}
+									</div>
+									{{/each}}
+					      </div>
+					    </div>
+					  </div>
 
-<div class="container">
-	<div class="jumbotron"><img src="/images/logo.svg" width="160">
-		<h1>微软雅黑</h1>
-		<p>This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.</p>
-		<p>
-			It includes the latest versions of
-			<a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		</p>
-		<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
-		<hr>
-		<p>We have created a default Admin user for you with the email <strong>admin@admin.com</strong> and the password <strong>admin</strong>.</p>
-		<p><a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a> to use the Admin UI.</p>
-		<hr>
-		<p>
-			Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
-		</p>
-	</div>
-</div>
+					</div>
+					<a class="carousel-control-prev d-none d-md-block" href="#carouselHomepageNews" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next d-none d-md-block" href="#carouselHomepageNews" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 
-<div class="container">
-	<div class="jumbotron"><img src="/images/logo.svg" width="160">
-		<h1>微软雅黑</h1>
-		<p>This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.</p>
-		<p>
-			It includes the latest versions of
-			<a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		</p>
-		<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
-		<hr>
-		<p>We have created a default Admin user for you with the email <strong>admin@admin.com</strong> and the password <strong>admin</strong>.</p>
-		<p><a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a> to use the Admin UI.</p>
-		<hr>
-		<p>
-			Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
-		</p>
+				</div>
+				<div class="homepage-news-link col-lg-3">
+					<div class="row">
+						<div class="col-6 col-sm-3 col-lg-12 col-xl-6 homepage-news-link-block">
+							<a href="/blog/5b75933335216123504aa3d9">
+								<img src="/images/home/1-1 icon.png" class="homepage-news-link-block-edu" alt="留学资讯">
+							</a>
+						</div>
+						<div class="col-6 col-sm-3 col-lg-12 col-xl-6 homepage-news-link-block">
+							<a href="/blog/5b75933f35216123504aa3da">
+								<img src="/images/home/2-1 icon.png" class="homepage-news-link-block-imm" alt="移民资讯">
+							</a>
+						</div>
+						<div class="col-6 col-sm-3 col-lg-12 col-xl-6 homepage-news-link-block">
+							<a href="/blog/5b75934935216123504aa3db">
+								<img src="/images/home/3-1 icon.png" class="homepage-news-link-block-live" alt="生活资讯">
+							</a>
+						</div>
+						<div class="col-6 col-sm-3 col-lg-12 col-xl-6 homepage-news-link-block">
+							<a href="/blog/5b75934e35216123504aa3dc">
+								<img src="/images/home/4-1 icon.png" class="homepage-news-link-block-work" alt="工作资讯">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+
+	<div class="homepage-service text-white section-padding">
+		<div class="container container--large">
+			<div class="row">
+
+				<div class="col-md-6 col-lg py-3 homepage-service-block">
+		    	<div class="homepage-service-block-circle">
+		      	<a href="/immigration">
+		        	<img class="d-block img-fluid homepage-service-block-circle-img homepage-service-block-circle-img--1" src="/images/home/wyse home icon/5-2-icon.png" alt="移民项目">
+		      	</a>
+		    	</div>
+	      	<div class="homepage-service-block-heading text-center py-3"> 移民项目 </div>
+	      	<div class="homepage-service-block-text">
+	        	加拿大以先进的教育水平、完善的福利政策、优美的自然环境、良好的投资环境等，从世界各地吸引到大量的移民者。而随着加拿大新政策的不断颁布，移民至加拿大的人也是络绎不绝，更是吸引了大批的留学生的加入。
+					</div>
+	     	</div>
+
+			 	<div class="col-md-6 col-lg py-3 homepage-service-block">
+					<div class="homepage-service-block-circle">
+						<a href="/pass">
+							<img class="d-block img-fluid homepage-service-block-circle-img homepage-service-block-circle-img--2" src="/images/home/wyse home icon/6-2-icon.png" alt="P.A.S.S">
+						</a>
+					</div>
+					<div class="homepage-service-block-heading text-center py-3"> P.A.S.S </div>
+					<div class="homepage-service-block-text">
+						P.A.S.S（Pre/Post - Arrival Support Services）集出行前须知的各种信息，丰富的落 地后服务与多伦多著名景点的观光游玩为一体的特色服务项目，由专门的辅导人员全程一 对一陪同辅导学生，让学生能够更充分地在开学前季融入加拿大本土的环境和生活节奏。
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg py-3 homepage-service-block">
+					<div class="homepage-service-block-circle">
+						<a href="/education">
+							<img class="d-block img-fluid homepage-service-block-circle-img homepage-service-block-circle-img--3" src="/images/home/wyse home icon/7-2-icon.png" alt="学校介绍">
+						</a>
+					</div>
+					<div class="homepage-service-block-heading text-center py-3"> 学校介绍 </div>
+					<div class="homepage-service-block-text">
+						加拿大实行“培养人才第一”的教育制度，大多数学校实行为公立教育，全部经过加拿大 政府的严格审查，总体教育水平也处于世界前列。一般大学分为三大类，即医学博士类（ 医博类）大学、综合类大学、基础类大学。
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg py-3 homepage-service-block">
+					<div class="homepage-service-block-circle">
+						<a href="/immigration">
+							<img class="d-block img-fluid homepage-service-block-circle-img homepage-service-block-circle-img--4" src="/images/home/wyse home icon/8-2-icon.png" alt="夏/冬令营">
+						</a>
+					</div>
+					<div class="homepage-service-block-heading text-center py-3"> 夏|冬令营 </div>
+					<div class="homepage-service-block-text">
+						近年来，出国游学的热潮不断升温，游学目的地主要以北美为主。加拿大游学夏令营也吸 引着越来越多的人去感受“枫叶之国”的文化。参加加拿大游学夏令营不仅仅是一次出国 旅行，更是一次学习异国文化，领略加拿大风土人情的学习体验。
+					</div>
+				</div>
+
+				<div class="col-md py-3 homepage-service-block">
+					<div class="homepage-service-block-circle">
+						<a href="/immigration">
+							<img class="d-block img-fluid homepage-service-block-circle-img homepage-service-block-circle-img--5" src="/images/home/wyse home icon/9-2-icon.png" alt="签证服务">
+						</a>
+					</div>
+					<div class="homepage-service-block-heading text-center py-3"> 签证服务 </div>
+					<div class="homepage-service-block-text">
+						加拿大签证因其拒签率高、办理时间长、政策频变，而有“最难签证”之称。自行申请之 初也常被五花八门的表格绕晕，许多学生也被签证问题所困扰。那让我们来看一下申请不 同的签证所需要准备的各种材料与常见问题吧。
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	{{>contact-form}}
+
+	{{>social-link}}
+
 </div>

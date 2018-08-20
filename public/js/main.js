@@ -80,9 +80,130 @@
     }
   });
 
+  //////////     For Mobile Swipe    ////////////
+  var touchStartX = null;
+
+  $('.carousel').each(function () {
+    var $carousel = $(this);
+    $(this).on('touchstart', function (event) {
+        var e = event.originalEvent;
+        if (e.touches.length == 1) {
+            var touch = e.touches[0];
+            touchStartX = touch.pageX;
+        }
+    }).on('touchmove', function (event) {
+        var e = event.originalEvent;
+        if (touchStartX != null) {
+            var touchCurrentX = e.changedTouches[0].pageX;
+            if ((touchCurrentX - touchStartX) > 60) {
+                touchStartX = null;
+                $carousel.carousel('prev');
+            } else if ((touchStartX - touchCurrentX) > 60) {
+                touchStartX = null;
+                $carousel.carousel('next');
+            }
+        }
+    }).on('touchend', function () {
+        touchStartX = null;
+    });
+  });
+  //////////     For Mobile Swipe    ////////////
+
+  // hover link
+  $(".homepage-news-content-block-link").hover(
+    function () {
+         $(this).find(".homepage-news-content-block-link-arrow").attr("src","/icon/arrows_right_double-yellow.svg");
+    },
+    function () {
+        $(this).find(".homepage-news-content-block-link-arrow").attr("src","/icon/arrows_right_double-red.svg");
+    }
+  );
+  // hover link
+
   if ( $(window).width() >= 992 ) {
     var dropdownWidth = $('.nav-item-hover-dropdown').width();
     $(".nav-item-dropdown-content").css({"width":dropdownWidth+"px"});
   }
+
+  // homepage-news-link
+  $(".homepage-news-link-block-edu").hover(
+    function () {
+         $(this).attr("src","/images/home/1-2 icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/1-1 icon.png");
+    }
+  );
+
+  $(".homepage-news-link-block-imm").hover(
+    function () {
+         $(this).attr("src","/images/home/2-2 icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/2-1 icon.png");
+    }
+  );
+
+  $(".homepage-news-link-block-live").hover(
+    function () {
+         $(this).attr("src","/images/home/3-2 icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/3-1 icon.png");
+    }
+  );
+
+  $(".homepage-news-link-block-work").hover(
+    function () {
+         $(this).attr("src","/images/home/4-2 icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/4-1 icon.png");
+    }
+  );
+  // homepage-news-link
+
+  // homepage-service-circle
+  $(".homepage-service-block-circle-img--1").hover(
+    function () {
+         $(this).attr("src","/images/home/wyse home icon/5-1-icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/wyse home icon/5-2-icon.png");
+    }
+  );
+  $(".homepage-service-block-circle-img--2").hover(
+    function () {
+         $(this).attr("src","/images/home/wyse home icon/6-1-icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/wyse home icon/6-2-icon.png");
+    }
+  );
+  $(".homepage-service-block-circle-img--3").hover(
+    function () {
+         $(this).attr("src","/images/home/wyse home icon/7-1-icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/wyse home icon/7-2-icon.png");
+    }
+  );
+  $(".homepage-service-block-circle-img--4").hover(
+    function () {
+         $(this).attr("src","/images/home/wyse home icon/8-1-icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/wyse home icon/8-2-icon.png");
+    }
+  );
+  $(".homepage-service-block-circle-img--5").hover(
+    function () {
+         $(this).attr("src","/images/home/wyse home icon/9-1-icon.png");
+    },
+    function () {
+        $(this).attr("src","/images/home/wyse home icon/9-2-icon.png");
+    }
+  );
+  // homepage-service-circle
 
 })(jQuery); // End of use strict
