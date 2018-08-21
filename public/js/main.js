@@ -206,4 +206,24 @@
   );
   // homepage-service-circle
 
+  // navbar dropdown menu
+  $(".nav-dropdown-toggle").click( function() {
+      $(this).toggleClass("nav-dropdown-toggle--show");
+  });
+  if ( $(window).width() >= 992 ) {
+    $(".nav-dropdown").hover(
+      function () {
+        //$(this).addClass("show");
+        $(this).children(".nav-dropdown-toggle").addClass("nav-dropdown-toggle--show");
+        $(this).children(".dropdown-menu").addClass("show");
+      },
+      function () {
+        $(this).children(".nav-dropdown-toggle").removeClass("nav-dropdown-toggle--show");
+        $(this).children(".dropdown-menu").removeClass("show");
+      }
+    );
+  }
+
+  // navbar dropdown menu
+
 })(jQuery); // End of use strict

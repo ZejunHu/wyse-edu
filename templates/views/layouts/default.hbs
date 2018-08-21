@@ -66,9 +66,33 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
 						{{# each navLinks}}
-						<li {{#ifeq ../section key}}class="nav-item active"{{else}}class="nav-item"{{/ifeq}}>
-							<a class="nav-link js-scroll-trigger" href="{{ href }}">{{ label }}</a>
-						</li>
+							{{#if more}}
+							<li {{#ifeq ../section key}}class="nav-item nav-dropdown active"{{else}}class="nav-item nav-dropdown"{{/ifeq}}>
+								<a class="nav-link js-scroll-trigger" href="{{ href }}">{{ label }}</a>
+								{{#ifeq key 'blog'}}
+								<a class="nav-dropdown-toggle" href="#" role="button" id="dropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down"></i></a>
+								<div class="dropdown-menu" aria-labelledby="dropdownBlog">
+									<a class="dropdown-item" href="/blog/edu"><i class="fas fa-chevron-right"></i>留学</a>
+									<a class="dropdown-item" href="/blog/imm"><i class="fas fa-chevron-right"></i>移民</a>
+									<a class="dropdown-item" href="/blog/live"><i class="fas fa-chevron-right"></i>生活</a>
+									<a class="dropdown-item" href="/blog/work"><i class="fas fa-chevron-right"></i>工作</a>
+								</div>
+								{{else}}
+								<a class="nav-dropdown-toggle" href="#" role="button" id="dropdownProject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down"></i></a>
+								<div class="dropdown-menu dropdown-menu--long" aria-labelledby="dropdownProject">
+									<a class="dropdown-item" href="/project/1"><i class="fas fa-chevron-right"></i>曼尼托巴省留学-移民快速通道</a>
+									<a class="dropdown-item" href="/project/2"><i class="fas fa-chevron-right"></i>曼尼托巴省提名移民-商业投资类</a>
+									<a class="dropdown-item" href="/project/3"><i class="fas fa-chevron-right"></i>加拿大就业移民项目-经验移民项目</a>
+									<a class="dropdown-item" href="/project/4"><i class="fas fa-chevron-right"></i>加拿大就业移民项目-雇主经营项目</a>
+									<a class="dropdown-item" href="/project/5"><i class="fas fa-chevron-right"></i>加拿大经商移民项目</a>
+								</div>
+								{{/ifeq}}
+							</li>
+							{{else}}
+							<li {{#ifeq ../section key}}class="nav-item active"{{else}}class="nav-item"{{/ifeq}}>
+								<a class="nav-link js-scroll-trigger" href="{{ href }}">{{ label }}</a>
+							</li>
+							{{/if}}
 						{{/each}}
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger nav-link-button" href="#appointment">在线付款</a>

@@ -6091,23 +6091,61 @@ img::-moz-selection {
     padding: 0;
     margin-right: 1.2rem;
     box-shadow: none; }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link,
-  #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-    font-size: 1rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #322F22;
-    box-sizing: border-box; }
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-      color: #A12B2A; }
-    #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
-      color: #A12B2A !important;
-      background-color: transparent; }
-      #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
-      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
+  #mainNav .navbar-nav > li.nav-item {
+    position: relative; }
+    #mainNav .navbar-nav > li.nav-item > a.nav-link,
+    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #322F22;
+      box-sizing: border-box;
+      display: inline-block; }
+      #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
+      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
+        color: #A12B2A; }
+      #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
+      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
+        color: #A12B2A !important;
         background-color: transparent; }
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
+        #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
+          background-color: transparent; }
+    #mainNav .navbar-nav > li.nav-item .nav-dropdown-toggle {
+      padding: 3px 1rem 0 0;
+      float: right;
+      font-size: 24px;
+      display: inline-block;
+      color: #322F22;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s; }
+      #mainNav .navbar-nav > li.nav-item .nav-dropdown-toggle:hover {
+        color: #A12B2A;
+        cursor: pointer; }
+      #mainNav .navbar-nav > li.nav-item .nav-dropdown-toggle--show {
+        transform: rotateX(-180deg);
+        -ms-transform: rotateX(-180deg);
+        /* IE 9 */
+        -webkit-transform: rotateX(-180deg);
+        /* Safari and Chrome */ }
+    #mainNav .navbar-nav > li.nav-item .dropdown-menu {
+      border-top: 2px solid #A12B2A; }
+      #mainNav .navbar-nav > li.nav-item .dropdown-menu a {
+        color: #A12B2A;
+        font-size: 14px;
+        font-weight: bold;
+        padding-right: 1rem; }
+        #mainNav .navbar-nav > li.nav-item .dropdown-menu a i {
+          float: left;
+          margin-top: 5px;
+          margin-right: 1rem;
+          display: none; }
+        #mainNav .navbar-nav > li.nav-item .dropdown-menu a:hover {
+          background-color: rgba(161, 43, 42, 0.15);
+          color: #322F22; }
+          #mainNav .navbar-nav > li.nav-item .dropdown-menu a:hover i {
+            display: inherit; }
   #mainNav .navbar-nav > li.nav-item.active > a.nav-link,
   #mainNav .navbar-nav > li.nav-item.active > a.nav-link:focus {
     color: #A12B2A; }
@@ -6142,6 +6180,8 @@ img::-moz-selection {
         padding: 1rem 0; }
       #mainNav .navbar-nav > li.nav-item {
         padding: 0 0.5rem; }
+        #mainNav .navbar-nav > li.nav-item:hover .nav-link, #mainNav .navbar-nav > li.nav-item:hover .nav-dropdown-toggle {
+          color: #A12B2A; }
         #mainNav .navbar-nav > li.nav-item > a.nav-link,
         #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
           font-size: 14px;
@@ -6163,6 +6203,17 @@ img::-moz-selection {
           #mainNav .navbar-nav > li.nav-item > a.nav-link.nav-link-button:focus:active {
             color: #fff;
             background-color: #E0C057; }
+        #mainNav .navbar-nav > li.nav-item .nav-dropdown-toggle {
+          padding: 7px 0 0 2px;
+          font-size: 16px; }
+          #mainNav .navbar-nav > li.nav-item .nav-dropdown-toggle--show {
+            transform: translateY(6px) rotateX(-180deg);
+            -ms-transform: translateY(6px) rotateX(-180deg);
+            /* IE 9 */
+            -webkit-transform: translateY(6px) rotateX(-180deg);
+            /* Safari and Chrome */ }
+        #mainNav .navbar-nav > li.nav-item .dropdown-menu--long {
+          width: 340px; }
       #mainNav.navbar-shrink {
         border-bottom: 1px solid rgba(33, 37, 41, 0.1);
         background-color: rgba(50, 47, 34, 0.8); }
@@ -6172,6 +6223,8 @@ img::-moz-selection {
           display: none; }
         #mainNav.navbar-shrink .navbar-brand-shrink {
           display: inline-block; }
+        #mainNav.navbar-shrink .navbar-nav > li.nav-item:hover .nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item:hover .nav-dropdown-toggle {
+          color: #E0C057; }
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
           color: #fff; }
@@ -6181,6 +6234,16 @@ img::-moz-selection {
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link.nav-link-button,
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link.nav-link-button:focus {
           color: #fff; }
+        #mainNav.navbar-shrink .navbar-nav > li.nav-item .nav-dropdown-toggle {
+          color: #fff; }
+        #mainNav.navbar-shrink .navbar-nav > li.nav-item .dropdown-menu {
+          background-color: rgba(50, 47, 34, 0.8);
+          border-top: 2px solid #E0C057; }
+          #mainNav.navbar-shrink .navbar-nav > li.nav-item .dropdown-menu a {
+            color: #E0C057; }
+            #mainNav.navbar-shrink .navbar-nav > li.nav-item .dropdown-menu a:hover {
+              color: #fff;
+              background-color: rgba(224, 192, 87, 0.85); }
         #mainNav.navbar-shrink .navbar-nav > li.nav-item.active > a.nav-link,
         #mainNav.navbar-shrink .navbar-nav > li.nav-item.active > a.nav-link:focus {
           color: #E0C057; } }
