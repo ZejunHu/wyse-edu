@@ -110,20 +110,21 @@
   //////////     For Mobile Swipe    ////////////
 
   // hover link
-  $(".homepage-news-content-block-link").hover(
+  $(".arrow-link").hover(
     function () {
-         $(this).find(".homepage-news-content-block-link-arrow").attr("src","/icon/arrows_right_double-yellow.svg");
+         $(this).find(".arrow-link-arrow").attr("src","/icon/arrows_right_double-yellow.svg");
     },
     function () {
-        $(this).find(".homepage-news-content-block-link-arrow").attr("src","/icon/arrows_right_double-red.svg");
+        $(this).find(".arrow-link-arrow").attr("src","/icon/arrows_right_double-red.svg");
     }
   );
+
   // hover link
 
-  if ( $(window).width() >= 992 ) {
-    var dropdownWidth = $('.nav-item-hover-dropdown').width();
-    $(".nav-item-dropdown-content").css({"width":dropdownWidth+"px"});
-  }
+  // if ( $(window).width() >= 992 ) {
+  //   var dropdownWidth = $('.nav-item-hover-dropdown').width();
+  //   $(".nav-item-dropdown-content").css({"width":dropdownWidth+"px"});
+  // }
 
   // homepage-news-link
   $(".homepage-news-link-block-edu").hover(

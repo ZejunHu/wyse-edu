@@ -1,10 +1,3 @@
-@keyframes bounceAlpha {
-  0% {opacity: 1; transform: translateX(0px) scale(1);}
-  25%{opacity: 0; transform:translateX(20px) scale(0.9);}
-  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
-  55% {opacity: 1; transform: translateX(0px) scale(1);}
-}
-
 div.homepage {
   .masthead {
     .carousel-item {
@@ -32,6 +25,7 @@ div.homepage {
     .homepage-news-content {
       position: relative;
       .homepage-news-content-block {
+        margin: 1rem auto;
         .homepage-news-content-block-heading {
           @include text-level-2;
           color: $black;
@@ -39,24 +33,6 @@ div.homepage {
         .homepage-news-content-block-content {
           @include text-level-3;
           color: $gray;
-        }
-        .homepage-news-content-block-link {
-          color: $red;
-          .homepage-news-content-block-link-arrow {
-            height: 30px;
-            width: auto;
-            margin-top: -3px;
-          }
-          &:hover {
-            color: $yellow;
-            text-decoration: none;
-            .homepage-news-content-block-link-arrow {
-              animation-name: bounceAlpha;
-              animation-duration:1.4s;
-              animation-iteration-count:infinite;
-              animation-timing-function:linear;
-            }
-          }
         }
       }
       .carousel-control-prev {
@@ -161,6 +137,9 @@ div.homepage {
       }
       .homepage-news-content {
         padding: 0 3rem;
+        .homepage-news-content-block {
+          margin: 0 auto;
+        }
         .carousel-control-prev {
           left: -2rem;
         }

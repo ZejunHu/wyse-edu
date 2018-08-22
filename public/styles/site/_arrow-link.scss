@@ -1,0 +1,25 @@
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(20px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.arrow-link {
+  color: $red;
+  .arrow-link-arrow {
+    height: 30px;
+    width: auto;
+    margin-top: -3px;
+  }
+  &:hover {
+    color: $yellow;
+    text-decoration: none;
+    .arrow-link-arrow {
+      animation-name: bounceAlpha;
+      animation-duration:1.4s;
+      animation-iteration-count:infinite;
+      animation-timing-function:linear;
+    }
+  }
+}
