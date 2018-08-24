@@ -2,22 +2,24 @@
   margin: 1rem 0;
   .card {
     .card-header {
-      background-color: $red;
-      padding: 0.5rem;
+      //background-color: $red;
+      padding: 0;
       .btn-link {
-        height: 38px;
+        background-color: $red;
+        //height: 38px;
         width: 100%;
         color: $white;
         position: relative;
+        height: 56px;
         .btn-link-title {
           position: absolute;
-          left: 1rem;
-          top: 8px;
+          left: 1.5rem;
+          top: 15px;
         }
         .btn-link-chevron {
           position: absolute;
-          right: 1rem;
-          top: 9px;
+          right: 1.5rem;
+          top: 17px;
           @include transition-all;
         }
         &:hover {
@@ -29,6 +31,9 @@
           transform: rotate(-90deg);
         }
       }
+    }
+    .card-header .btn[aria-expanded=true] {
+      background-color: $yellow;
     }
     .card-body {
       &--categories {

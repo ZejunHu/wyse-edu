@@ -1,21 +1,94 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
-				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</h5>
-				</header>
-				<div class="post">
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
-					{{{data.post.content.extended}}}
-				</div>
-			</article>
-		</div>
-	</div>
+<div class="blog-categories">
+  <div class="blog-categories-header">
+		{{#ifeq data.post.categories '留学'}}
+    <img src="/images/blog/study.png">
+		{{/ifeq}}
+		{{#ifeq data.post.categories '移民'}}
+    <img src="/images/blog/immi.png">
+		{{/ifeq}}
+		{{#ifeq data.post.categories '生活'}}
+    <img src="/images/blog/life.png">
+		{{/ifeq}}
+		{{#ifeq data.post.categories '工作'}}
+    <img src="/images/blog/job.png">
+		{{/ifeq}}
+  </div>
+
+  <div class="container container--large">
+    <div class="row">
+      <div class="col-lg-3">
+
+        <div class="blog-accordion" id="blog-post-accordion">
+          <div class="card">
+            <div class="card-header" id="blog-post-headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#blog-post-collapseOne" aria-expanded="true" aria-controls="blog-post-collapseOne">
+                  <span class="btn-link-title">最新资讯</span>
+                  <img src="/icon/chevron-down-circle.svg" class="btn-link-chevron">
+                </button>
+              </h5>
+            </div>
+
+            <div id="blog-post-collapseOne" class="collapse show" aria-labelledby="blog-post-headingOne" data-parent="#blog-post-accordion">
+              <div class="card-body card-body--categories">
+                 <a href="/blog/edu" {{#ifeq data.post.categories '留学'}} class="card-body-link active" {{else}} class="card-body-link" {{/ifeq}}><span>留学</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+                 <a href="/blog/imm" {{#ifeq data.post.categories '移民'}} class="card-body-link active" {{else}} class="card-body-link" {{/ifeq}}><span>移民</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+                 <a href="/blog/live" {{#ifeq data.post.categories '生活'}} class="card-body-link active" {{else}} class="card-body-link" {{/ifeq}}><span>生活</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+                 <a href="/blog/work" {{#ifeq data.post.categories '工作'}} class="card-body-link active" {{else}} class="card-body-link" {{/ifeq}}><span>工作</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="blog-post-headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#blog-post-collapseTwo" aria-expanded="false" aria-controls="blog-post-collapseTwo">
+                  <span class="btn-link-title">升学辅导</span>
+                  <img src="/icon/chevron-down-circle.svg" class="btn-link-chevron">
+                </button>
+              </h5>
+            </div>
+            <div id="blog-post-collapseTwo" class="collapse" aria-labelledby="blog-post-headingTwo" data-parent="#blog-post-accordion">
+              <div class="card-body">
+                <div class="card-body-apply text-center">
+                  <h6>在线申请表单</h6>
+                  <a href="/在线申请表.docx" class="card-body-apply-btn" download>填表</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="blog-categories-posts">
+          <div class="blog-categories-posts-heading">
+            <div>
+    					<span class="blog-categories-posts-heading-name">{{data.post.categories}} | </span><a href="/blog" class="blog-categories-posts-heading-link">阅读所有内容</a>
+    				</div>
+          </div>
+					<div class="row mb-5">
+						<div class="col-12">
+							<article class="blog-single-post">
+								<header>
+									<h1 class="blog-single-post-heading">{{data.post.title}}</h1>
+									<h5 class="blog-single-post-info">
+										{{date data.post.publishedDate}}
+										{{#if data.post.author}} | {{data.post.author.name.first}} {{data.post.author.name.last}}{{/if}}
+									</h5>
+									<hr>
+								</header>
+								<div class="blog-single-post-content">
+									{{{data.post.content.extended}}}
+								</div>
+							</article>
+						</div>
+					</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  {{>social-link}}
 </div>

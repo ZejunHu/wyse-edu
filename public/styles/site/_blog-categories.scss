@@ -84,6 +84,23 @@
 
   }
 
+  .blog-single-post {
+    .blog-single-post-heading {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+    .blog-single-post-info {
+      color: $gray;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .blog-single-post-content {
+      margin-top: 1.5rem;
+      color: $gray;
+    }
+  }
+
   @media (min-width: 768px) {
     .blog-categories-posts {
       .blog-categories-posts-block {

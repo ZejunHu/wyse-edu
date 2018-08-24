@@ -6327,21 +6327,21 @@ img::-moz-selection {
 .blog-accordion {
   margin: 1rem 0; }
   .blog-accordion .card .card-header {
-    background-color: #A12B2A;
-    padding: 0.5rem; }
+    padding: 0; }
     .blog-accordion .card .card-header .btn-link {
-      height: 38px;
+      background-color: #A12B2A;
       width: 100%;
       color: #fff;
-      position: relative; }
+      position: relative;
+      height: 56px; }
       .blog-accordion .card .card-header .btn-link .btn-link-title {
         position: absolute;
-        left: 1rem;
-        top: 8px; }
+        left: 1.5rem;
+        top: 15px; }
       .blog-accordion .card .card-header .btn-link .btn-link-chevron {
         position: absolute;
-        right: 1rem;
-        top: 9px;
+        right: 1.5rem;
+        top: 17px;
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         transition: all 0.2s; }
@@ -6349,6 +6349,8 @@ img::-moz-selection {
         text-decoration: none; }
     .blog-accordion .card .card-header .btn-link.collapsed .btn-link-chevron {
       transform: rotate(-90deg); }
+  .blog-accordion .card .card-header .btn[aria-expanded=true] {
+    background-color: #E0C057; }
   .blog-accordion .card .card-body--categories {
     padding: 0; }
     .blog-accordion .card .card-body--categories .card-body-link {
@@ -6737,6 +6739,20 @@ div.blog .blog-category .blog-category-block {
       color: #A12B2A; }
       .blog-categories .blog-categories-pagination li a:hover {
         color: #E0C057; }
+
+.blog-categories .blog-single-post .blog-single-post-heading {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem; }
+
+.blog-categories .blog-single-post .blog-single-post-info {
+  color: #757575;
+  font-size: 1rem;
+  margin-bottom: 1.5rem; }
+
+.blog-categories .blog-single-post .blog-single-post-content {
+  margin-top: 1.5rem;
+  color: #757575; }
 
 @media (min-width: 768px) {
   .blog-categories .blog-categories-posts .blog-categories-posts-block {
