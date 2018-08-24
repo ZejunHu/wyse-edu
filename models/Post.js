@@ -17,11 +17,11 @@ Post.add({
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	image: { type: Types.CloudinaryImage },
+	categories: { type: Types.Select, options: '留学, 移民, 生活, 工作', index: true },
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: false },
 });
 
 Post.schema.virtual('content.full').get(function () {

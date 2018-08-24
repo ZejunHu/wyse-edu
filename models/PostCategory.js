@@ -6,16 +6,15 @@ var keystone = require('keystone');
  */
 
 var PostCategory = new keystone.List('PostCategory', {
-	autokey: { from: 'name', path: 'key', unique: true },
+  nocreate: true,
+	noedit: true,
 });
 
 PostCategory.add({
 	name: { type: String, required: true },
-	order: { type: Number, required: true, default: 999 },
+	priority: { type: Number, default: 9999 },
 });
 
 PostCategory.relationship({ ref: 'Post', path: 'posts', refPath: 'categories' });
-
-PostCategory.defaultColumns = 'name, order';
 
 PostCategory.register();

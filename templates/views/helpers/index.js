@@ -198,7 +198,10 @@ module.exports = function () {
 
 	// might be a ghost helper
 	// used for pagination urls on blog
-	_helpers.pageUrl = function (pageNumber, options) {
+	_helpers.pageUrl = function (pageNumber, category, options) {
+		if (category) {
+			return '/blog/' + category + '?page=' + pageNumber;
+		}
 		return '/blog?page=' + pageNumber;
 	};
 
@@ -227,11 +230,12 @@ module.exports = function () {
 		return options.inverse(this);
 	};
 
-	_helpers.paginationNavigation = function (pages, currentPage, totalPages, options) {
+	_helpers.paginationNavigation = function (pages, currentPage, totalPages, category, options) {
 		var html = '';
 
 		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
 		// '...' will be added by keystone if the pages exceed 10
+		
 		_.each(pages, function (page, ctr) {
 			// create ref to page, so that '...' is displayed as text even though int value is required
 			var pageText = page;
@@ -247,7 +251,7 @@ module.exports = function () {
 			}
 
 			// get the pageUrl using the integer value
-			var pageUrl = _helpers.pageUrl(page);
+			var pageUrl = _helpers.pageUrl(page, category);
 			// wrapup the html
 			html += '<li' + liClass + '>' + linkTemplate({ url: pageUrl, text: pageText }) + '</li>\n';
 		});
@@ -256,20 +260,20 @@ module.exports = function () {
 
 	// special helper to ensure that we always have a valid page url set even if
 	// the link is disabled, will default to page 1
-	_helpers.paginationPreviousUrl = function (previousPage, totalPages) {
+	_helpers.paginationPreviousUrl = function (previousPage, totalPages, category) {
 		if (previousPage === false) {
 			previousPage = 1;
 		}
-		return _helpers.pageUrl(previousPage);
+		return _helpers.pageUrl(previousPage, category);
 	};
 
 	// special helper to ensure that we always have a valid next page url set
 	// even if the link is disabled, will default to totalPages
-	_helpers.paginationNextUrl = function (nextPage, totalPages) {
+	_helpers.paginationNextUrl = function (nextPage, totalPages, category) {
 		if (nextPage === false) {
 			nextPage = totalPages;
 		}
-		return _helpers.pageUrl(nextPage);
+		return _helpers.pageUrl(nextPage, category);
 	};
 
 

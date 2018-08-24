@@ -1,0 +1,100 @@
+<div class="blog-categories">
+  <div class="blog-categories-header">
+    <img src="/images/blog/study.png" alt="留学">
+  </div>
+
+  <div class="container container--large">
+    <div class="row">
+      <div class="col-lg-3">
+
+        <div class="blog-accordion" id="blog-edu-accordion">
+          <div class="card">
+            <div class="card-header" id="blog-edu-headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#blog-edu-collapseOne" aria-expanded="true" aria-controls="blog-edu-collapseOne">
+                  <span class="btn-link-title">最新资讯</span>
+                  <img src="/icon/chevron-down-circle.svg" class="btn-link-chevron">
+                </button>
+              </h5>
+            </div>
+
+            <div id="blog-edu-collapseOne" class="collapse show" aria-labelledby="blog-edu-headingOne" data-parent="#blog-edu-accordion">
+              <div class="card-body card-body--categories">
+                 <a href="/blog/edu" class="card-body-link active"><span>留学</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+                 <a href="/blog/imm" class="card-body-link"><span>移民</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+                 <a href="/blog/live" class="card-body-link"><span>生活</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+                 <a href="/blog/work" class="card-body-link"><span>工作</span><span class="card-body-link-arrow"><i class="fas fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="blog-edu-headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#blog-edu-collapseTwo" aria-expanded="false" aria-controls="blog-edu-collapseTwo">
+                  <span class="btn-link-title">升学辅导</span>
+                  <img src="/icon/chevron-down-circle.svg" class="btn-link-chevron">
+                </button>
+              </h5>
+            </div>
+            <div id="blog-edu-collapseTwo" class="collapse" aria-labelledby="blog-edu-headingTwo" data-parent="#blog-edu-accordion">
+              <div class="card-body">
+                <div class="card-body-apply text-center">
+                  <h6>在线申请表单</h6>
+                  <a href="/在线申请表.docx" class="card-body-apply-btn" download>填表</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="blog-categories-posts">
+          <div class="blog-categories-posts-heading">
+            <div>
+    					<span class="blog-categories-posts-heading-name">留学 | </span><a href="/blog" class="blog-categories-posts-heading-link">阅读所有内容</a>
+    				</div>
+          </div>
+          {{#each data.postsEdu.results}}
+          <div class="blog-categories-posts-block">
+            <h3><a href="{{postUrl slug}}" class="blog-categories-posts-block-title">{{{title}}}</a></h3>
+            <p class="blog-categories-posts-block-info">
+              {{date publishedDate}}
+              {{#if author.name.first}} | {{author.name.first}} {{author.name.last}}{{/if}}
+            </p>
+            <div class="row mb-md-3">
+              <div class="col-md-5">
+                {{#if image}}<a href="{{postUrl slug}}"><img src="{{{cloudinaryUrl image crop='fit' }}}" class="blog-categories-posts-block-image"></a>{{/if}}
+              </div>
+              <div class="col-md-7">
+                <div class="blog-categories-posts-block-content">{{{content.brief}}}</div>
+              </div>
+            </div>
+            <a href="{{postUrl slug}}" class="arrow-link">
+              <span>阅读全文</span>
+              <img class="arrow-link-arrow" src="/icon/arrows_right_double-red.svg" alt="">
+            </a>
+          </div>
+          {{/each}}
+          <ul class="blog-categories-pagination pagination">
+          	<li {{#unless data.postsEdu.previous}}class="disabled blog-categories-pagination-icon" {{/unless}} class="blog-categories-pagination-icon">
+          		<a href="{{paginationPreviousUrl data.postsEdu.previous data.postsEdu.totalPages 'edu'}}">
+          			<i class="fas fa-chevron-left"></i>
+          		</a>
+          	</li>
+          	{{{paginationNavigation data.postsEdu.pages data.postsEdu.currentPage data.postsEdu.totalPages 'edu'}}}
+          	<li {{#unless data.postsEdu.next}}class="disabled blog-categories-pagination-icon" {{/unless}} class="blog-categories-pagination-icon">
+          		<a href="{{paginationNextUrl data.postsEdu.next data.postsEdu.totalPages 'edu'}}">
+          			<i class="fas fa-chevron-right"></i>
+          		</a>
+          	</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  {{>social-link}}
+</div>

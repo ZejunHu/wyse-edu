@@ -8,12 +8,7 @@ exports = module.exports = function (req, res) {
 
 	// Init locals
 	locals.section = 'blog';
-	// locals.filters = {
-	// 	category: req.params.category,
-	// };
 	locals.data = {
-		// posts: [],
-		// categories: [],
 		posts1: [],
 		posts2: [],
 		posts3: [],
@@ -22,68 +17,6 @@ exports = module.exports = function (req, res) {
 		postsLive: [],
 		postsWork: [],
 	};
-
-	// Load all categories
-	// view.on('init', function (next) {
-	//
-	// 	keystone.list('PostCategory').model.find().sort('name').exec(function (err, results) {
-	//
-	// 		if (err || !results.length) {
-	// 			return next(err);
-	// 		}
-	//
-	// 		locals.data.categories = results;
-	//
-	// 		// Load the counts for each category
-	// 		async.each(locals.data.categories, function (category, next) {
-	//
-	// 			keystone.list('Post').model.count().where('categories').in([category.id]).exec(function (err, count) {
-	// 				category.postCount = count;
-	// 				next(err);
-	// 			});
-	//
-	// 		}, function (err) {
-	// 			next(err);
-	// 		});
-	// 	});
-	// });
-	//
-	// // Load the current category filter
-	// view.on('init', function (next) {
-	//
-	// 	if (req.params.category) {
-	// 		keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-	// 			locals.data.category = result;
-	// 			next(err);
-	// 		});
-	// 	} else {
-	// 		next();
-	// 	}
-	// });
-	//
-	// // Load the posts
-	// view.on('init', function (next) {
-	//
-	// 	var q = keystone.list('Post').paginate({
-	// 		page: req.query.page || 1,
-	// 		perPage: 10,
-	// 		maxPages: 10,
-	// 		filters: {
-	// 			state: 'published',
-	// 		},
-	// 	})
-	// 		.sort('-publishedDate')
-	// 		.populate('author categories');
-	//
-	// 	if (locals.data.category) {
-	// 		q.where('categories').in([locals.data.category]);
-	// 	}
-	//
-	// 	q.exec(function (err, results) {
-	// 		locals.data.posts = results;
-	// 		next(err);
-	// 	});
-	// });
 
 	view.on('init', function (next) {
 
@@ -96,7 +29,7 @@ exports = module.exports = function (req, res) {
 			},
 		})
 			.sort('-publishedDate')
-			.populate('author categories');
+			.populate('author');
 
 
 		q.exec(function (err, results) {
@@ -118,12 +51,11 @@ exports = module.exports = function (req, res) {
 			maxPages: 1,
 			filters: {
 				state: 'published',
+				categories: "留学",
 			},
 		})
 			.sort('-publishedDate')
-			.populate('author categories');
-
-			q.where('categories').in('5b75933335216123504aa3d9');
+			.populate('author');
 
 		q.exec(function (err, results) {
 			locals.data.postsEdu = results;
@@ -138,12 +70,11 @@ exports = module.exports = function (req, res) {
 			maxPages: 1,
 			filters: {
 				state: 'published',
+				categories: "移民",
 			},
 		})
 			.sort('-publishedDate')
-			.populate('author categories');
-
-			q.where('categories').in('5b75933f35216123504aa3da');
+			.populate('author');
 
 		q.exec(function (err, results) {
 			locals.data.postsImm = results;
@@ -158,12 +89,11 @@ exports = module.exports = function (req, res) {
 			maxPages: 1,
 			filters: {
 				state: 'published',
+				categories: "生活",
 			},
 		})
 			.sort('-publishedDate')
-			.populate('author categories');
-
-			q.where('categories').in('5b75934935216123504aa3db');
+			.populate('author');
 
 		q.exec(function (err, results) {
 			locals.data.postsLive = results;
@@ -178,12 +108,11 @@ exports = module.exports = function (req, res) {
 			maxPages: 1,
 			filters: {
 				state: 'published',
+				categories: "工作",
 			},
 		})
 			.sort('-publishedDate')
-			.populate('author categories');
-
-			q.where('categories').in('5b75934e35216123504aa3dc');
+			.populate('author');
 
 		q.exec(function (err, results) {
 			locals.data.postsWork = results;
