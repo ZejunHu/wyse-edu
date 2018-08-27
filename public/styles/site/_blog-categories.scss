@@ -21,6 +21,10 @@
           text-decoration: none;
         }
       }
+      .blog-categories-posts-heading-red {
+        font-size: 22px;
+        color: $red;
+      }
     }
     .blog-categories-posts-block {
       .blog-categories-posts-block-title {
@@ -98,6 +102,18 @@
     .blog-single-post-content {
       margin-top: 1.5rem;
       color: $gray;
+      .blog-single-post-content-section {
+        margin-bottom: 2rem;
+        @include text-level-3;
+        h3 {
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 0.8rem;
+        }
+        .blog-single-post-content-section-order-list-b {
+          list-style: lower-alpha;
+        }
+      }
     }
   }
 

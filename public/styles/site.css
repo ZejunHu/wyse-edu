@@ -6699,6 +6699,9 @@ div.blog .blog-category .blog-category-block {
     .blog-categories .blog-categories-posts .blog-categories-posts-heading .blog-categories-posts-heading-link:hover {
       color: #E0C057;
       text-decoration: none; }
+  .blog-categories .blog-categories-posts .blog-categories-posts-heading .blog-categories-posts-heading-red {
+    font-size: 22px;
+    color: #A12B2A; }
 
 .blog-categories .blog-categories-posts .blog-categories-posts-block .blog-categories-posts-block-title {
   color: #322F22;
@@ -6753,6 +6756,18 @@ div.blog .blog-category .blog-category-block {
 .blog-categories .blog-single-post .blog-single-post-content {
   margin-top: 1.5rem;
   color: #757575; }
+  .blog-categories .blog-single-post .blog-single-post-content .blog-single-post-content-section {
+    margin-bottom: 2rem;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 25px; }
+    .blog-categories .blog-single-post .blog-single-post-content .blog-single-post-content-section h3 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem; }
+    .blog-categories .blog-single-post .blog-single-post-content .blog-single-post-content-section .blog-single-post-content-section-order-list-b {
+      list-style: lower-alpha; }
 
 @media (min-width: 768px) {
   .blog-categories .blog-categories-posts .blog-categories-posts-block {
