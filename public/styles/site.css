@@ -6794,6 +6794,88 @@ div.blog .blog-category .blog-category-block {
     font-size: 18px;
     letter-spacing: 1px; } }
 
+.pass .pass-header {
+  position: relative;
+  margin-top: 75px;
+  background-image: url("/images/pass/pass-header.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
+  min-height: 400px; }
+  .pass .pass-header .pass-header-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    min-width: 250px; }
+    .pass .pass-header .pass-header-container h1 {
+      text-align: center;
+      margin-bottom: 1.5rem; }
+
+.pass .pass-content {
+  margin-top: 2rem; }
+  .pass .pass-content .pass-content-block {
+    margin-top: 1rem; }
+    .pass .pass-content .pass-content-block .pass-content-block-heading {
+      position: relative; }
+      .pass .pass-content .pass-content-block .pass-content-block-heading img {
+        width: 235.5px;
+        height: 125px; }
+      .pass .pass-content .pass-content-block .pass-content-block-heading h2 {
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 3rem;
+        left: 2rem; }
+      .pass .pass-content .pass-content-block .pass-content-block-heading span {
+        display: block;
+        color: #757575;
+        font-size: 22px;
+        font-weight: bold;
+        padding-left: 1.2rem; }
+    .pass .pass-content .pass-content-block .pass-content-block-img {
+      padding: 2rem 1.2rem 0 1.2rem; }
+    .pass .pass-content .pass-content-block .pass-content-block-text {
+      margin: 2rem 0;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      font-weight: bold;
+      color: #757575; }
+      .pass .pass-content .pass-content-block .pass-content-block-text .pass-content-block-text-sublist {
+        list-style: lower-alpha; }
+      .pass .pass-content .pass-content-block .pass-content-block-text .pass-content-block-text-normal {
+        font-weight: normal;
+        color: #322F22; }
+
+@media (min-width: 576px) {
+  .pass .pass-content .pass-content-block .pass-content-block-heading span {
+    display: inline-block;
+    font-size: 18px; } }
+
+@media (min-width: 992px) {
+  .pass .pass-header {
+    margin-top: 129px; }
+    .pass .pass-header .pass-header-container p {
+      font-size: 18px;
+      letter-spacing: 0.5px; }
+  .pass .pass-content .pass-content-block .pass-content-block-heading img {
+    width: 329.7px;
+    height: 175px; }
+  .pass .pass-content .pass-content-block .pass-content-block-heading h2 {
+    font-size: 27px;
+    top: 4.4rem;
+    left: 4rem; }
+  .pass .pass-content .pass-content-block .pass-content-block-heading span {
+    font-size: 24px; }
+  .pass .pass-content .pass-content-block .pass-content-block-text {
+    overflow-y: auto;
+    max-height: 600px; } }
+
 .contact-form {
   padding: 4rem 0 2rem; }
   .contact-form .contact-form-heading {

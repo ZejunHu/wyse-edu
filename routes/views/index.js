@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
+var Enquiry = keystone.list('Enquiry');
 
 exports = module.exports = function (req, res) {
 
@@ -15,6 +16,10 @@ exports = module.exports = function (req, res) {
 		posts2: [],
 		posts3: [],
 	};
+
+	locals.formData = req.body || {};
+	locals.validationErrors = {};
+	locals.enquirySubmitted = false;
 
 	// Load the edu-news
 	view.on('init', function (next) {
@@ -40,6 +45,26 @@ exports = module.exports = function (req, res) {
 			locals.data.posts2 = res2;
 			locals.data.posts3 = res3;
 			next(err);
+		});
+	});
+
+	// On POST requests, add the Enquiry item to the database
+	view.on('post', { action: 'contact' }, function (next) {
+
+		var newEnquiry = new Enquiry.model();
+		var updater = newEnquiry.getUpdateHandler(req);
+
+		updater.process(req.body, {
+			flashErrors: true,
+			fields: 'name, email, phone, message',
+			errorMessage: 'There was a problem submitting your enquiry:',
+		}, function (err) {
+			if (err) {
+				locals.validationErrors = err.errors;
+			} else {
+				locals.enquirySubmitted = true;
+			}
+			next();
 		});
 	});
 
