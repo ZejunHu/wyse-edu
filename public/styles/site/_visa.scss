@@ -1,0 +1,123 @@
+.visa {
+  .visa-header {
+    position: relative;
+    margin-top: 75px;
+    background-image: url("/images/visa/visa-banner.png");
+    @include background-cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+    min-height: 400px;
+    .visa-header-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $white;
+      transform: translate(-50%, -50%);
+      min-width: 250px;
+      h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  .visa-content {
+    margin-top: 2rem;
+    .visa-content-block {
+      margin-top: 1rem;
+      .visa-content-block-heading {
+        position: relative;
+        .visa-content-block-heading-tab {
+          width: 235.5px;
+          height: 125px;
+          &--long {
+            width: 310px;
+          }
+        }
+        .visa-content-block-heading-title {
+          color: $white;
+          font-size: 22px;
+          position: absolute;
+          top: 3rem;
+          left: 1.8rem;
+        }
+      }
+      .visa-content-block-list {
+        padding: 1.5rem 2rem;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        color: $black;
+      }
+      .visa-content-block-notice {
+        display: flex;
+        flex-wrap: wrap;
+        .visa-content-block-notice-img {
+          flex: 0 0 7%;
+          padding: 0 10px;
+        }
+        .visa-content-block-notice-text {
+          padding: 0 10px;
+          flex: 0 0 93%;
+          color: $red;
+          font-size: 18px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+
+  // @media (min-width: 768px) {
+  //   .visa-content {
+  //     .visa-content-block {
+  //       .visa-content-block-notice {
+  //         img {
+  //
+  //           //margin-top: 10px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  @media (min-width: 992px) {
+    .visa-header {
+      margin-top: 129px;
+      .visa-header-container {
+        p {
+          font-size: 18px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+    .visa-content {
+      margin-bottom: 1rem;
+      .visa-content-block {
+        .visa-content-block-heading {
+          .visa-content-block-heading-tab {
+            width: 329.7px;
+            height: 175px;
+            &--long {
+              width: 434px;
+            }
+          }
+          .visa-content-block-heading-title {
+            font-size: 27px;
+            top: 4.4rem;
+            left: 3.8rem;
+          }
+        }
+        .visa-content-block-notice {
+          .visa-content-block-notice-img {
+            flex: 0 0 6%;
+            img {
+              margin-top: -0.5rem;
+            }
+          }
+          .visa-content-block-notice-text {
+            flex: 0 0 94%;
+          }
+        }
+      }
+    }
+  }
+}
