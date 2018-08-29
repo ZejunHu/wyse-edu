@@ -1,44 +1,43 @@
-<div class="container">
-	<h1>Contact Us</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if enquirySubmitted}}
-			<h3>Thanks for getting in touch.</h3>
-			{{else}}
-			<form method="post">
-				<input type="hidden" name="action" value="contact">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
-				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
-				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
-					<select name="enquiryType" class="form-control">
-						<option value="">(select one)</option>
-						{{#each enquiryTypes}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
-				</div>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
-				</div>
-			</form>
-			{{/if}}
-		</div>
+<div class="contact">
+	<div class="contact-header">
+    <div class="contact-header-container">
+      <h1>关于维智教育</h1>
+      <p>
+				维智教育是加拿大安大略省正式注册以服务留学生为主线的合法经营企业。<br>
+				我们真诚地为需要帮助的每一位留学生提供满意的服务。这里将是留学生值得信赖的，集留学，生活，法律服务于一体的留学生之家！<br>
+				我们还针对加国留学生为您提供留学升学服务，以及专业的法律服务于咨询，另外我们还有接送等各类生活实用服务。<br>
+				我们会定期组织不同特色的留学生活动和聚会，从而结交更多的朋友，分享更多的经验。让留学生在这里感受家的温暖。
+			</p>
+    </div>
+  </div>
+
+	{{>contact-form}}
+
+	<div class="container">
+		<div class="contact-map" id="contact-google-map"></div>
 	</div>
+
+
+	{{>social-link}}
 </div>
+
+<script>
+    function initMap() {
+      var myLatLng = {lat: 43.7715403, lng: -79.3327207};
+
+      // Create a map object and specify the DOM element
+      // for display.
+      var map = new google.maps.Map(document.getElementById('contact-google-map'), {
+        center: myLatLng,
+        zoom: 17
+      });
+
+      // Create a marker and set its position.
+      var marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        title: 'Contact Us'
+      });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSqdfEOZIg3hI9CcFJHX8q2m5gmA3uy_o&callback=initMap" async defer></script>

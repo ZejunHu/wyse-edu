@@ -6958,6 +6958,214 @@ div.blog .blog-category .blog-category-block {
     .visa .visa-content .visa-content-block .visa-content-block-notice .visa-content-block-notice-text {
       flex: 0 0 94%; } }
 
+.camp .camp-header {
+  position: relative;
+  margin-top: 75px;
+  background-image: url("/images/camp/camp-header.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+  min-height: 400px; }
+  .camp .camp-header .camp-header-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    min-width: 250px; }
+    .camp .camp-header .camp-header-container h1 {
+      text-align: center;
+      margin-bottom: 1.5rem; }
+    .camp .camp-header .camp-header-container .camp-header-container-list {
+      list-style: none;
+      padding: 0; }
+      .camp .camp-header .camp-header-container .camp-header-container-list .list-item .list-indicator {
+        height: 1.125rem;
+        width: 1.125rem;
+        margin-top: -0.4rem;
+        margin-right: 0.5rem; }
+
+.camp .camp-content {
+  padding-top: 2rem;
+  background-image: url("/images/camp/pattern-pic.png");
+  background-repeat: repeat; }
+  .camp .camp-content .camp-content-block {
+    margin-top: 1rem;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: #322F22; }
+    .camp .camp-content .camp-content-block .camp-content-block-heading {
+      position: relative; }
+      .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-tab {
+        width: 151px;
+        height: 125px; }
+        .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-tab--schedule {
+          width: 287.5px; }
+        .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-tab--university {
+          width: 223px; }
+      .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-title {
+        color: #fff;
+        font-size: 22px;
+        position: absolute;
+        top: 3rem;
+        left: 1.8rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-text {
+      padding: 1.5rem 2rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-subheading {
+      padding: 0;
+      height: 4rem;
+      margin: 1rem 0;
+      color: #322F22; }
+      .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-subheading img {
+        float: left;
+        height: 4.5rem;
+        width: 4.5rem;
+        padding: 0.5rem;
+        margin-top: -0.5rem; }
+      .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-subheading h3 {
+        position: relative;
+        top: 1.2rem;
+        left: 0.8rem;
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 1rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course .camp-content-block-university-content-tag {
+      background-color: #E0C057;
+      border-radius: 12px;
+      color: #fff;
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      margin-left: 1rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course p, .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course ul {
+      margin-left: 1rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course .camp-content-block-university-course-list {
+      list-style: none;
+      padding: 0; }
+      .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course .camp-content-block-university-course-list .list-item {
+        margin: 0.5rem 0; }
+        .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course .camp-content-block-university-course-list .list-item .list-indicator {
+          height: 1.125rem;
+          width: 1.125rem;
+          margin-top: -0.4rem;
+          margin-right: 0.8rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-notice {
+      display: flex;
+      flex-wrap: wrap; }
+      .camp .camp-content .camp-content-block .camp-content-block-notice .camp-content-block-notice-img {
+        flex: 0 0 7%;
+        padding: 0 10px; }
+      .camp .camp-content .camp-content-block .camp-content-block-notice .camp-content-block-notice-text {
+        padding: 0 10px;
+        flex: 0 0 93%;
+        color: #A12B2A;
+        font-size: 18px;
+        letter-spacing: 0.5px; }
+
+.camp .carousel {
+  padding: 1rem 0 4rem; }
+  .camp .carousel .carousel-indicators {
+    bottom: 0; }
+    .camp .carousel .carousel-indicators--round li {
+      border-radius: 10px;
+      margin: 0 0.5rem;
+      height: 12px;
+      max-width: 12px;
+      border: 1px;
+      background-color: #322F22;
+      opacity: 0.5;
+      cursor: pointer; }
+      .camp .carousel .carousel-indicators--round li:hover {
+        background-color: #E0C057; }
+    .camp .carousel .carousel-indicators .active {
+      background-color: #E0C057; }
+
+@media (min-width: 992px) {
+  .camp .camp-header {
+    height: 50vh;
+    margin-top: 129px; }
+    .camp .camp-header .camp-header-container .camp-header-container-list {
+      list-style: none;
+      padding: 0; }
+      .camp .camp-header .camp-header-container .camp-header-container-list .list-item {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        margin: 0.5rem 0; }
+        .camp .camp-header .camp-header-container .camp-header-container-list .list-item .list-indicator {
+          height: 1.125rem;
+          width: 1.125rem;
+          margin-top: -0.4rem;
+          margin-right: 0.5rem; }
+  .camp .camp-content {
+    padding-bottom: 1rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-tab {
+      width: 211.4px;
+      height: 175px; }
+      .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-tab--schedule {
+        width: 402.5px; }
+      .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-tab--university {
+        width: 312.2px; }
+    .camp .camp-content .camp-content-block .camp-content-block-heading .camp-content-block-heading-title {
+      font-size: 27px;
+      top: 4.4rem;
+      left: 3.6rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-university {
+      overflow-y: auto;
+      max-height: 830px; }
+      .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course .camp-content-block-university-content-tag {
+        margin-left: 6.5rem;
+        margin-top: 1rem; }
+      .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course p, .camp .camp-content .camp-content-block .camp-content-block-university .camp-content-block-university-course ul {
+        margin-left: 6.5rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-notice .camp-content-block-notice-img {
+      flex: 0 0 6%; }
+      .camp .camp-content .camp-content-block .camp-content-block-notice .camp-content-block-notice-img img {
+        margin-top: -0.5rem; }
+    .camp .camp-content .camp-content-block .camp-content-block-notice .camp-content-block-notice-text {
+      flex: 0 0 94%; } }
+
+.contact .contact-header {
+  position: relative;
+  margin-top: 75px;
+  background-image: url("/images/contact/contact-header.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  min-height: 400px; }
+  .contact .contact-header .contact-header-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    min-width: 250px; }
+    .contact .contact-header .contact-header-container h1 {
+      text-align: center;
+      margin-bottom: 1.5rem; }
+
+.contact .contact-map {
+  height: 400px;
+  margin: 2rem auto 4rem; }
+
+@media (min-width: 992px) {
+  .contact .contact-header {
+    margin-top: 129px;
+    height: 50vh; }
+    .contact .contact-header .contact-header-container p {
+      font-size: 18px;
+      letter-spacing: 0.5px; }
+  .contact .contact-map {
+    height: 600px; } }
+
 .contact-form {
   padding: 4rem 0 2rem; }
   .contact-form .contact-form-heading {
@@ -6991,7 +7199,7 @@ div.blog .blog-category .blog-category-block {
 
 .social-link {
   font-size: 2rem;
-  margin-bottom: 3rem; }
+  padding-bottom: 3rem; }
   .social-link a {
     color: #4E6C8C; }
     .social-link a:hover {

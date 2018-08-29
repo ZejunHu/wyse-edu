@@ -1,0 +1,43 @@
+.contact {
+  .contact-header {
+    position: relative;
+    margin-top: 75px;
+    background-image: url("/images/contact/contact-header.png");
+    @include background-cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    min-height: 400px;
+    .contact-header-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $white;
+      transform: translate(-50%, -50%);
+      min-width: 250px;
+      h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  .contact-map {
+    height: 400px;
+    margin: 2rem auto 4rem;
+  }
+  @media (min-width: 992px) {
+    .contact-header {
+      margin-top: 129px;
+      height: 50vh;
+      .contact-header-container {
+        p {
+          font-size: 18px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+    .contact-map {
+      height: 600px;
+    }
+  }
+}
