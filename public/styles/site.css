@@ -6876,6 +6876,171 @@ div.blog .blog-category .blog-category-block {
     overflow-y: auto;
     max-height: 600px; } }
 
+.education .education-header {
+  position: relative;
+  margin-top: 75px;
+  background-image: url("/images/education/bg-school.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  min-height: 400px; }
+  .education .education-header .education-header-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    min-width: 250px; }
+    .education .education-header .education-header-container h1 {
+      text-align: center;
+      margin-bottom: 1.5rem; }
+
+.education .education-accordion {
+  margin: 1rem 0; }
+  .education .education-accordion .card .card-header {
+    padding: 0; }
+    .education .education-accordion .card .card-header .btn-link {
+      background-color: #E0C057;
+      width: 100%;
+      color: #fff;
+      position: relative;
+      height: 56px; }
+      .education .education-accordion .card .card-header .btn-link .btn-link-title {
+        position: absolute;
+        left: 1.5rem;
+        top: 15px; }
+      .education .education-accordion .card .card-header .btn-link .btn-link-chevron {
+        position: absolute;
+        right: 1.5rem;
+        top: 17px;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s; }
+      .education .education-accordion .card .card-header .btn-link:hover {
+        text-decoration: none; }
+    .education .education-accordion .card .card-header .btn-link.collapsed {
+      background-color: #A12B2A; }
+      .education .education-accordion .card .card-header .btn-link.collapsed .btn-link-chevron {
+        transform: rotate(-90deg); }
+  .education .education-accordion .card .card-body--categories {
+    padding: 0; }
+    .education .education-accordion .card .card-body--categories .card-body-link {
+      display: block;
+      position: relative;
+      color: #322F22;
+      padding: 0.5rem 1.9rem 0.5rem 1.6rem;
+      border-bottom: 1px solid rgba(50, 47, 34, 0.125); }
+      .education .education-accordion .card .card-body--categories .card-body-link:hover {
+        color: #A12B2A;
+        text-decoration: none; }
+      .education .education-accordion .card .card-body--categories .card-body-link .card-body-link-arrow {
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%); }
+    .education .education-accordion .card .card-body--categories .card-body-link.active {
+      color: #A12B2A; }
+  .education .education-accordion .card-body-apply .card-body-apply-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    color: #fff;
+    letter-spacing: 2px;
+    background-color: #E0C057;
+    border-radius: 30px; }
+    .education .education-accordion .card-body-apply .card-body-apply-btn:hover {
+      background-color: rgba(224, 192, 87, 0.8);
+      text-decoration: none; }
+
+.education .education-tab {
+  display: none; }
+
+.education .education-content {
+  margin: 4rem auto; }
+  .education .education-content .education-content-row .education-content-block {
+    position: relative;
+    background-color: transparent;
+    margin: 1rem auto; }
+    .education .education-content .education-content-row .education-content-block a img {
+      position: relative;
+      z-index: 5;
+      width: 100%; }
+    .education .education-content .education-content-row .education-content-block a .education-content-block-info {
+      text-align: center;
+      position: relative;
+      color: #322F22;
+      padding: 1rem;
+      font-weight: bold;
+      z-index: 5; }
+    .education .education-content .education-content-row .education-content-block a .education-content-block-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #757575;
+      opacity: 0;
+      z-index: 10; }
+    .education .education-content .education-content-row .education-content-block:hover a {
+      text-decoration: none; }
+      .education .education-content .education-content-row .education-content-block:hover a .education-content-block-info {
+        color: #E0C057; }
+      .education .education-content .education-content-row .education-content-block:hover a .education-content-block-overlay {
+        opacity: 0.4; }
+
+.education .education-text {
+  padding: 2rem; }
+  .education .education-text .education-text-heading {
+    margin-bottom: 2rem; }
+  .education .education-text .education-text-content p {
+    margin-bottom: 1rem; }
+  .education .education-text .education-text-content div {
+    margin-bottom: 2rem; }
+
+@media (min-width: 992px) {
+  .education .education-header {
+    margin-top: 129px;
+    height: 50vh; }
+    .education .education-header .education-header-container p {
+      font-size: 18px;
+      letter-spacing: 0.5px; }
+  .education .education-tab {
+    display: inherit;
+    text-align: center;
+    margin-top: 4rem; }
+    .education .education-tab .education-tab-link {
+      width: 98%;
+      background-color: #A12B2A;
+      color: #fff;
+      padding: 0.8rem 0; }
+      .education .education-tab .education-tab-link:hover {
+        text-decoration: none;
+        background-color: #E0C057; }
+      .education .education-tab .education-tab-link.active {
+        background-color: transparent;
+        border-top: 5px solid #E0C057;
+        color: #E0C057; }
+  .education .education-accordion {
+    margin: 4rem auto; }
+    .education .education-accordion .card .card-body--categories .card-body-link .card-body-link-arrow {
+      right: 1rem; }
+  .education .education-content {
+    margin: 0 auto 4rem; }
+    .education .education-content .education-content-row {
+      margin-top: 2rem; }
+  .education .education-text {
+    padding: 4rem 3rem; } }
+
+@media (min-width: 1200px) {
+  .education .education-accordion .card .card-body--categories .card-body-link .card-body-link-arrow {
+    right: 2rem; } }
+
 .visa .visa-header {
   position: relative;
   margin-top: 75px;

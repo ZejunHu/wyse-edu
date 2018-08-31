@@ -57,7 +57,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			to: admins,
 			from: {
 				name: 'wyse',
-				email: 'contact@wyse.com',
+				email: 'noreply@wysedu.ca',
 			},
 			subject: 'New Enquiry for wyse',
 			enquiry: enquiry,

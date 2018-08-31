@@ -1,9 +1,9 @@
-<h1>Hi %recipient.firstName%</h1>
+<h1>Hi 维智教育!</h1>
 <p class="text-larger">An enquiry was just submitted to {{brand}}:</p>
 {{#if enquiry.email}}
 	<p class="text-larger">From
-	{{#if enquiry.name.full}}
-		<strong>{{enquiry.name.full}}</strong>
+	{{#if enquiry.name}}
+		<strong>{{enquiry.name}}</strong>
 	{{/if}}
 
 	{{#if enquiry.email}}
@@ -13,10 +13,6 @@
 
 	{{#if enquiry.phone}}
 		<p class="text-larger">Phone: {{enquiry.phone}}</p>
-	{{/if}}
-
-	{{#if enquiry.enquiryType}}
-		<p class="text-larger">{{underscoreFormat enquiry 'enquiryType'}}</p>
 	{{/if}}
 
 	{{#if enquiry.message}}
