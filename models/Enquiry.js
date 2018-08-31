@@ -54,7 +54,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'enquiry-notification',
 			transport: 'mailgun',
 		}).send({
-			to: admins,
+			to: 'info@wysedu.ca',
 			from: {
 				name: 'wyse',
 				email: 'noreply@wysedu.ca',
